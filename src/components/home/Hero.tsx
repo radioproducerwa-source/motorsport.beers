@@ -26,7 +26,7 @@ export default function Hero() {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-1/3 bg-gradient-to-t from-beers-black to-transparent" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 pb-32 sm:pb-24">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -89,23 +89,24 @@ export default function Hero() {
           </Link>
           <Link
             href="#about"
-            className="flex items-center gap-2 border border-beers-white/20 hover:border-beers-gold/50 text-beers-white/70 hover:text-beers-gold font-medium px-8 py-4 rounded-lg transition-all tracking-wide text-sm sm:text-base"
+            className="flex items-center gap-2 border border-beers-white/30 hover:border-beers-gold/60 text-beers-white/80 hover:text-beers-gold font-medium px-8 py-4 rounded-lg transition-all tracking-wide text-sm sm:text-base bg-white/5 hover:bg-beers-gold/5"
           >
             Learn More
           </Link>
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span className="text-beers-white/20 text-[10px] tracking-[0.3em] uppercase">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-beers-white/20 to-transparent" />
-        </motion.div>
       </div>
+
+      {/* Scroll indicator — fixed to section bottom */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+      >
+        <span className="text-beers-white/20 text-[10px] tracking-[0.3em] uppercase">Scroll</span>
+        <div className="w-px h-12 bg-gradient-to-b from-beers-white/20 to-transparent" />
+      </motion.div>
     </section>
   )
 }
