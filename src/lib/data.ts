@@ -24,6 +24,7 @@ export type Event = {
   aasaPitCrewIndemnityUrl: string
   status: 'upcoming' | 'past'
   youtubeEmbedIds?: string[]
+  backgroundDecoration?: 'clovers'
 }
 
 export type PastEvent = {
@@ -48,8 +49,9 @@ export const events2026: Event[] = [
     venue: 'MotorMall Wanneroo Raceway',
     address: '440 Wattle Ave E, Neerabup WA 6031',
     teamsEntered: 22,
-    accentColor: '#16a34a',
-    accentColorDark: '#14532d',
+    accentColor: '#009A44',
+    accentColorDark: '#003d1a',
+    backgroundDecoration: 'clovers',
     pricingTiers: [
       {
         name: 'Early Bird Entries',

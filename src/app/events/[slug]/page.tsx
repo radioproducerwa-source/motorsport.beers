@@ -47,6 +47,49 @@ export default async function EventPage({ params }: Props) {
           }}
         />
 
+        {/* Four-leaf clovers — Emerald event only */}
+        {event.backgroundDecoration === 'clovers' && (
+          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+            {([
+              { left: '4%',  top: '10%', size: 80,  opacity: 0.09, rotation: 12  },
+              { left: '83%', top: '7%',  size: 52,  opacity: 0.08, rotation: -20 },
+              { left: '2%',  top: '55%', size: 44,  opacity: 0.06, rotation: 48  },
+              { left: '89%', top: '50%', size: 68,  opacity: 0.07, rotation: -38 },
+              { left: '14%', top: '80%', size: 58,  opacity: 0.08, rotation: 25  },
+              { left: '74%', top: '76%', size: 40,  opacity: 0.06, rotation: -14 },
+              { left: '44%', top: '4%',  size: 34,  opacity: 0.05, rotation: 65  },
+              { left: '57%', top: '87%', size: 46,  opacity: 0.07, rotation: -55 },
+              { left: '28%', top: '38%', size: 30,  opacity: 0.04, rotation: 82  },
+              { left: '68%', top: '28%', size: 38,  opacity: 0.05, rotation: -70 },
+              { left: '38%', top: '68%', size: 26,  opacity: 0.04, rotation: 33  },
+              { left: '91%', top: '22%', size: 32,  opacity: 0.05, rotation: 110 },
+            ] as const).map((c, i) => (
+              <svg
+                key={i}
+                viewBox="-22 -24 44 42"
+                width={c.size}
+                height={c.size}
+                className="absolute"
+                style={{
+                  left: c.left,
+                  top: c.top,
+                  opacity: c.opacity,
+                  transform: `rotate(${c.rotation}deg)`,
+                  color: accent,
+                }}
+              >
+                {/* Four leaves — overlapping circles */}
+                <ellipse cx="0"  cy="-8" rx="8" ry="9" fill="currentColor" />
+                <ellipse cx="8"  cy="0"  rx="9" ry="8" fill="currentColor" />
+                <ellipse cx="0"  cy="8"  rx="8" ry="9" fill="currentColor" />
+                <ellipse cx="-8" cy="0"  rx="9" ry="8" fill="currentColor" />
+                {/* Stem */}
+                <line x1="0" y1="12" x2="0" y2="18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+              </svg>
+            ))}
+          </div>
+        )}
+
         {/* Radial glow */}
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full opacity-20 blur-[100px]"
